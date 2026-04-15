@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NaNa 概念美學・美甲價目表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0eb;
+    --taupe: #c4b5a5;
+    --dark-taupe: #8c7b6e;
+    --deep: #2c2420;
+    --accent: #b8967e;
+    --light-accent: #e8d5c8;
+    --border: rgba(180,155,135,0.3);
+    --green: #06C755;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--cream);
+    font-family: 'Noto Serif TC', serif;
+    color: var(--deep);
+    min-height: 100vh;
+  }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(184,150,126,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(196,181,165,0.15) 0%, transparent 50%);
+    pointer-events:none; z-index:0;
+  }
+  .container {
+    position:relative; z-index:1;
+    max-width:480px; margin:0 auto;
+    padding:36px 20px 60px;
+  }
+
+/* HEADER */
+.header { text-align:center; margin-bottom:18px; animation:fadeDown .8s ease both; }
+.header-sub {
+font-family:‘Playfair Display’,serif; font-style:italic;
+font-size:12px; letter-spacing:4px; color:var(–accent);
+text-transform:uppercase; margin-bottom:10px;
+}
+.header-title { font-size:28px; font-weight:700; letter-spacing:6px; color:var(–deep); }
+.header-title::after {
+content:’’; display:block; width:36px; height:2px;
+background:var(–accent); margin:14px auto 0;
+}
+.store-addr { margin-top:12px; font-size:11px; color:var(–dark-taupe); letter-spacing:.8px; line-height:1.9; text-align:center; }
+.store-addr a { color:var(–dark-taupe); text-decoration:none; }
+
+.booking-btn {
+display:flex; align-items:center; justify-content:center; gap:10px;
+background:linear-gradient(135deg,#06C755,#04a844);
+color:#fff; text-decoration:none; border-radius:50px;
+padding:15px 28px; font-size:15px; font-weight:600;
+letter-spacing:3px; margin-top:22px;
+box-shadow:0 6px 20px rgba(6,199,85,.32);
+transition:transform .2s, box-shadow .2s;
+animation:fadeUp .8s .3s ease both;
+}
+.booking-btn:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(6,199,85,.4); }
+
+/* TABS */
+.tabs {
+display:flex; gap:5px; margin:26px 0 22px;
+background:rgba(255,255,255,.5); border-radius:50px;
+padding:5px; border:1px solid var(–border);
+backdrop-filter:blur(8px);
+animation:fadeUp .8s .2s ease both;
+}
+.tab-btn {
+flex:1; padding:9px 4px; border:none; background:transparent;
+border-radius:50px; font-family:‘Noto Serif TC’,serif;
+font-size:12px; color:var(–dark-taupe); cursor:pointer;
+transition:all .3s; letter-spacing:1px;
+}
+.tab-btn.active { background:var(–deep); color:var(–cream); box-shadow:0 4px 14px rgba(44,36,32,.22); }
+.tab-btn:not(.active):hover { color:var(–deep); background:rgba(184,150,126,.15); }
+
+/* PANELS */
+.tab-panel { display:none; animation:fadeUp .4s ease both; }
+.tab-panel.active { display:block; }
+
+/* CARD */
+.card {
+background:rgba(255,255,255,.72); backdrop-filter:blur(12px);
+border-radius:22px; border:1px solid rgba(255,255,255,.9);
+box-shadow:0 8px 28px rgba(140,123,110,.11), inset 0 1px 0 rgba(255,255,255,.8);
+overflow:hidden; margin-bottom:14px;
+}
+.card-hd {
+background:linear-gradient(135deg,var(–deep),#3d2e28);
+padding:18px 26px; display:flex; align-items:center; gap:10px;
+}
+.card-hd-icon { width:32px; height:32px; background:rgba(255,255,255,.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; }
+.card-hd-title { font-size:16px; font-weight:600; color:var(–cream); letter-spacing:4px; }
+.card-bd { padding:22px 26px; }
+.col-hd { display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; padding-bottom:8px; margin-bottom:4px; border-bottom:1px solid var(–border); }
+.col-hd span { text-align:right; font-size:11px; color:var(–dark-taupe); letter-spacing:2.5px; }
+.col-hd span:first-child { text-align:left; }
+.row3 { display:grid; grid-template-columns:1fr 1fr 1fr; align-items:center; padding:12px 0; border-bottom:1px dashed var(–border); }
+.row3:last-of-type { border-bottom:none; }
+.row3 .nm { font-size:13.5px; color:var(–deep); letter-spacing:.5px; }
+.row3 .vl { text-align:right; font-family:‘Playfair Display’,serif; font-size:14.5px; font-weight:700; color:var(–accent); }
+.note-box { background:linear-gradient(135deg,var(–light-accent),rgba(232,213,200,.5)); border-radius:12px; padding:13px 16px; margin-top:14px; border-left:3px solid var(–accent); }
+.note-box p { font-size:12px; color:var(–dark-taupe); line-height:1.85; letter-spacing:.5px; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+.mini-card { background:rgba(255,255,255,.72); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.9); border-radius:16px; padding:18px 14px; text-align:center; box-shadow:0 4px 14px rgba(140,123,110,.1); }
+.mini-card .ic { font-size:20px; margin-bottom:7px; }
+.mini-card .lb { font-size:12px; color:var(–dark-taupe); letter-spacing:1px; margin-bottom:5px; }
+.mini-card .pr { font-family:‘Playfair Display’,serif; font-size:21px; font-weight:700; color:var(–accent); }
+.mini-card .un { font-size:10px; color:var(–dark-taupe); }
+.promo { background:linear-gradient(135deg,#c4956a,#b8967e,#a07860); border-radius:15px; padding:16px 22px; display:flex; align-items:center; gap:14px; margin-top:14px; box-shadow:0 6px 18px rgba(184,150,126,.32); }
+.promo .ic { font-size:26px; flex-shrink:0; }
+.promo .tx { flex:1; }
+.promo .tx strong { font-size:15px; color:#fff; letter-spacing:2px; display:block; margin-bottom:3px; }
+.promo .tx p { font-size:11px; color:rgba(255,255,255,.8); letter-spacing:1px; }
+.promo .dc { font-family:‘Playfair Display’,serif; font-size:26px; font-weight:700; color:#fff; flex-shrink:0; }
+
+/* SCHEDULE */
+.schedule-title { text-align:center; font-size:13px; letter-spacing:3px; color:var(–dark-taupe); margin-bottom:16px; }
+.week-grid { display:flex; flex-direction:column; gap:8px; }
+.day-row { background:rgba(255,255,255,.72); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.9); border-radius:14px; padding:14px 18px; display:flex; align-items:flex-start; gap:14px; box-shadow:0 2px 10px rgba(140,123,110,.08); }
+.day-row.closed { opacity:.5; }
+.day-label { min-width:36px; font-size:14px; font-weight:600; color:var(–deep); letter-spacing:1px; padding-top:3px; }
+.day-slots { flex:1; display:flex; flex-wrap:wrap; gap:7px; }
+.slot-tag { background:var(–light-accent); color:var(–dark-taupe); font-size:12px; padding:5px 12px; border-radius:50px; letter-spacing:.5px; border:1px solid rgba(184,150,126,.3); }
+.slot-tag.full { background:rgba(140,123,110,.1); color:rgba(140,123,110,.45); text-decoration:line-through; }
+.closed-label { font-size:12px; color:var(–taupe); letter-spacing:1px; padding-top:3px; }
+.schedule-note { text-align:center; font-size:11px; color:var(–taupe); margin-top:16px; letter-spacing:.8px; line-height:1.8; }
+.no-schedule { text-align:center; padding:36px 20px; color:var(–taupe); font-size:13px; letter-spacing:1px; line-height:2.2; }
+
+/* ADMIN TRIGGER */
+.admin-trigger { text-align:center; margin-top:8px; }
+.admin-link { font-size:10px; color:rgba(196,181,165,.4); letter-spacing:1px; cursor:pointer; border:none; background:none; font-family:‘Noto Serif TC’,serif; padding:6px 10px; }
+.admin-link:hover { color:var(–taupe); }
+
+/* MODALS */
+.modal-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(44,36,32,.55); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:20px; }
+.modal-overlay.open { display:flex; }
+.modal { background:var(–cream); border-radius:24px; width:100%; max-width:440px; max-height:88vh; overflow-y:auto; box-shadow:0 24px 60px rgba(44,36,32,.3); animation:slideUp .3s ease; }
+.modal-hd { padding:20px 22px 16px; border-bottom:1px solid var(–border); display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:var(–cream); z-index:1; border-radius:24px 24px 0 0; }
+.modal-hd h2 { font-size:15px; letter-spacing:3px; color:var(–deep); }
+.modal-close { width:30px; height:30px; border-radius:50%; border:none; background:rgba(140,123,110,.15); cursor:pointer; font-size:15px; color:var(–dark-taupe); display:flex; align-items:center; justify-content:center; }
+.modal-close:hover { background:rgba(140,123,110,.25); }
+.modal-bd { padding:20px 22px; }
+
+/* FORMS */
+.field { margin-bottom:14px; }
+.field label { display:block; font-size:11px; letter-spacing:2px; color:var(–dark-taupe); margin-bottom:6px; }
+.field input { width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(–border); background:rgba(255,255,255,.8); font-family:‘Noto Serif TC’,serif; font-size:14px; color:var(–deep); outline:none; transition:border .2s; }
+.field input:focus { border-color:var(–accent); }
+.btn-primary { width:100%; padding:13px; border-radius:50px; border:none; background:linear-gradient(135deg,var(–deep),#3d2e28); color:var(–cream); font-family:‘Noto Serif TC’,serif; font-size:14px; letter-spacing:3px; cursor:pointer; box-shadow:0 4px 14px rgba(44,36,32,.2); transition:transform .2s; }
+.btn-primary:hover { transform:translateY(-1px); }
+.err-msg { font-size:12px; color:#c0392b; text-align:center; margin-top:8px; letter-spacing:1px; min-height:18px; }
+
+/* ADMIN EDITOR */
+.admin-day { margin-bottom:18px; }
+.admin-day-hd { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.admin-day-name { font-size:14px; font-weight:600; letter-spacing:2px; }
+.toggle-closed { font-size:11px; letter-spacing:.5px; padding:5px 12px; border-radius:50px; border:1px solid var(–border); background:transparent; cursor:pointer; color:var(–dark-taupe); font-family:‘Noto Serif TC’,serif; transition:all .2s; }
+.toggle-closed.is-closed { background:rgba(140,123,110,.12); color:var(–accent); border-color:var(–accent); }
+.slots-area { display:flex; flex-wrap:wrap; gap:6px; min-height:28px; margin-bottom:8px; align-items:center; }
+.slot-chip { display:flex; align-items:center; gap:5px; background:var(–light-accent); border-radius:50px; padding:5px 8px 5px 12px; font-size:12px; color:var(–dark-taupe); border:1px solid rgba(184,150,126,.3); }
+.slot-chip.full-chip { background:rgba(140,123,110,.1); color:rgba(140,123,110,.6); }
+.chip-full-btn { font-size:10px; letter-spacing:.3px; padding:2px 8px; border-radius:50px; border:1px solid var(–border); background:transparent; cursor:pointer; color:var(–dark-taupe); font-family:‘Noto Serif TC’,serif; }
+.chip-del { width:16px; height:16px; border-radius:50%; border:none; background:rgba(140,123,110,.2); cursor:pointer; font-size:10px; color:var(–dark-taupe); display:flex; align-items:center; justify-content:center; }
+.add-row { display:flex; gap:6px; }
+.add-row input { flex:1; padding:8px 12px; border-radius:10px; border:1px solid var(–border); background:rgba(255,255,255,.8); font-size:13px; font-family:‘Noto Serif TC’,serif; color:var(–deep); outline:none; }
+.add-row input:focus { border-color:var(–accent); }
+.btn-add { padding:8px 14px; border-radius:10px; border:none; background:var(–accent); color:#fff; cursor:pointer; font-size:13px; letter-spacing:1px; white-space:nowrap; }
+.sep { border:none; border-top:1px dashed var(–border); margin:18px 0; }
+.note-field label { display:block; font-size:11px; letter-spacing:2px; color:var(–dark-taupe); margin-bottom:6px; }
+.note-field textarea { width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(–border); background:rgba(255,255,255,.8); font-family:‘Noto Serif TC’,serif; font-size:13px; color:var(–deep); outline:none; resize:vertical; min-height:65px; transition:border .2s; }
+.note-field textarea:focus { border-color:var(–accent); }
+.save-bar { padding:14px 22px 18px; border-top:1px solid var(–border); background:var(–cream); }
+.save-ok { text-align:center; font-size:12px; color:var(–green); letter-spacing:1px; margin-top:8px; min-height:18px; }
+.pw-section { margin-top:14px; }
+.pw-toggle-btn { font-size:11px; color:var(–dark-taupe); background:none; border:none; cursor:pointer; font-family:‘Noto Serif TC’,serif; padding:4px 0; text-decoration:underline; letter-spacing:1px; }
+.pw-form { display:none; margin-top:12px; }
+.pw-form.open { display:block; }
+
+/* FOOTER */
+.footer { text-align:center; margin-top:36px; font-size:11px; color:var(–taupe); letter-spacing:2px; animation:fadeUp .8s .5s ease both; }
+.divider { display:flex; align-items:center; gap:12px; margin:8px 0; }
+.divider::before,.divider::after { content:’’; flex:1; height:1px; background:linear-gradient(to right,transparent,var(–border),transparent); }
+.divider span { font-size:13px; color:var(–taupe); }
+
+@keyframes fadeDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp   { from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp  { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
+</style>
+
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+
+  <div class="header">
+    <div class="header-sub">Nail Salon · Concept Aesthetics</div>
+    <div class="header-title">NaNa 概念美學</div>
+  </div>
+  <div class="store-addr">
+    <a href="https://maps.google.com/?q=基隆市仁愛區愛三路57號5樓" target="_blank">
+      📍 基隆市仁愛區愛三路 57 號 5 樓（大嘴巴茶坊樓上）
+    </a>
+  </div>
+  <a class="booking-btn" href="https://lin.ee/PrtUzbE" target="_blank">
+    <span>💬</span> LINE 立即預約
+  </a>
+
+  <!-- TABS -->
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('schedule')">預約時間</button>
+    <button class="tab-btn" onclick="switchTab('remove')">卸甲</button>
+    <button class="tab-btn" onclick="switchTab('gel')">凝膠</button>
+    <button class="tab-btn" onclick="switchTab('other')">其他</button>
+  </div>
+
+  <!-- 預約時間 -->
+
+  <div class="tab-panel active" id="tab-schedule">
+    <div class="schedule-title">本週開放預約時段</div>
+    <div class="week-grid" id="scheduleDisplay"></div>
+    <div class="schedule-note" id="scheduleNote"></div>
+  </div>
+
+  <!-- 卸甲 -->
+
+  <div class="tab-panel" id="tab-remove">
+    <div class="card">
+      <div class="card-hd"><div class="card-hd-icon">✦</div><div class="card-hd-title">卸甲</div></div>
+      <div class="card-bd">
+        <div class="col-hd"><span>來源</span><span>手</span><span>足</span></div>
+        <div class="row3"><span class="nm">本店續作</span><span class="vl">$200</span><span class="vl">$300</span></div>
+        <div class="row3"><span class="nm">他店續作</span><span class="vl">$300</span><span class="vl">$400</span></div>
+      </div>
+    </div>
+    <div class="note-box">
+      <p>✦ &nbsp;不續作以上價格 + $100</p>
+      <p>✦ &nbsp;以上不續作僅包含簡短、順修</p>
+    </div>
+  </div>
+
+  <!-- 凝膠 -->
+
+  <div class="tab-panel" id="tab-gel">
+    <div class="card">
+      <div class="card-hd"><div class="card-hd-icon">✦</div><div class="card-hd-title">凝膠</div></div>
+      <div class="card-bd">
+        <div class="col-hd"><span>款式</span><span>手</span><span>足</span></div>
+        <div class="row3"><span class="nm">單色<br><small style="font-size:10px;color:#8c7b6e;">可跳一色</small></span><span class="vl">$1100</span><span class="vl">$1300</span></div>
+        <div class="row3"><span class="nm">貓眼/碎鑽</span><span class="vl">$1200</span><span class="vl">$1400</span></div>
+        <div class="row3"><span class="nm">鏡面/法式</span><span class="vl">$1300</span><span class="vl">$1500</span></div>
+        <div class="row3"><span class="nm">小紅書款<br><small style="font-size:10px;color:#8c7b6e;">依圖報價</small></span><span class="vl">$1200起</span><span class="vl">$1400起</span></div>
+      </div>
+    </div>
+    <div class="note-box"><p>✦ &nbsp;以上皆包含基礎保養、建構加固</p></div>
+  </div>
+
+  <!-- 其他 -->
+
+  <div class="tab-panel" id="tab-other">
+    <div class="two-col">
+      <div class="mini-card"><div class="ic">💅</div><div class="lb">延甲</div><div class="pr">$100</div><div class="un">/ 指</div></div>
+      <div class="mini-card"><div class="ic">🔧</div><div class="lb">裂甲修補</div><div class="pr">$80</div><div class="un">/ 指</div></div>
+    </div>
+    <div class="promo">
+      <div class="ic">🎁</div>
+      <div class="tx"><strong>手足同時預約</strong><p>限時優惠折扣</p></div>
+      <div class="dc">-$200</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    <div class="divider"><span>✦</span></div>
+    <p>美甲・價目表</p>
+    <p style="margin-top:4px;">價格如有異動，以現場公告為準</p>
+  </div>
+  <div class="admin-trigger">
+    <button class="admin-link" onclick="openLogin()">⚙</button>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+
+<div class="modal-overlay" id="loginModal">
+  <div class="modal" style="max-width:360px">
+    <div class="modal-hd">
+      <h2>後台管理</h2>
+      <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="field">
+        <label>管理密碼</label>
+        <input type="password" id="pwInput" placeholder="輸入密碼" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <button class="btn-primary" onclick="doLogin()">登 入</button>
+      <div class="err-msg" id="loginErr"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN MODAL -->
+
+<div class="modal-overlay" id="adminModal">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2>預約時段管理</h2>
+      <button class="modal-close" onclick="closeModal('adminModal')">✕</button>
+    </div>
+    <div class="modal-bd" id="adminBody"></div>
+    <div class="save-bar">
+      <button class="btn-primary" onclick="saveSchedule()">儲存並發布</button>
+      <div class="save-ok" id="saveMsg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SKEY = 'nana_schedule_v2';
+const PWKEY = 'nana_pw_v1';
+const DEF_PW = 'nana2024';
+const DAYS = ['一','二','三','四','五','六','日'];
+const DKEYS = ['mon','tue','wed','thu','fri','sat','sun'];
+
+const getPW = () => localStorage.getItem(PWKEY) || DEF_PW;
+
+function defaultData() {
+  return {
+    note: '如需預約請點擊上方 LINE 按鈕與我們聯繫 💕',
+    days: DKEYS.map((k,i) => ({
+      key: k,
+      closed: i === 0,
+      slots: i === 0 ? [] : ['10:00','12:00','14:00','16:00'].map(t => ({time:t, full:false}))
+    }))
+  };
+}
+
+function load() {
+  try { const r = localStorage.getItem(SKEY); return r ? JSON.parse(r) : defaultData(); }
+  catch(e) { return defaultData(); }
+}
+
+function save(d) { localStorage.setItem(SKEY, JSON.stringify(d)); }
+
+// PUBLIC RENDER
+function renderPublic() {
+  const d = load();
+  const grid = document.getElementById('scheduleDisplay');
+  const note = document.getElementById('scheduleNote');
+  grid.innerHTML = '';
+
+  d.days.forEach((day, i) => {
+    const row = document.createElement('div');
+    row.className = 'day-row' + (day.closed ? ' closed' : '');
+
+    const lbl = document.createElement('div');
+    lbl.className = 'day-label';
+    lbl.textContent = '週' + DAYS[i];
+    row.appendChild(lbl);
+
+    const slots = document.createElement('div');
+    slots.className = 'day-slots';
+
+    if (day.closed) {
+      slots.innerHTML = '<span class="closed-label">公休</span>';
+    } else if (!day.slots.length) {
+      slots.innerHTML = '<span class="closed-label">暫無開放時段</span>';
+    } else {
+      day.slots.forEach(s => {
+        const t = document.createElement('span');
+        t.className = 'slot-tag' + (s.full ? ' full' : '');
+        t.textContent = s.full ? s.time + ' 已滿' : s.time;
+        slots.appendChild(t);
+      });
+    }
+    row.appendChild(slots);
+    grid.appendChild(row);
+  });
+
+  note.textContent = d.note || '';
+}
+
+// TABS
+function switchTab(name) {
+  const names = ['schedule','remove','gel','other'];
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', names[i]===name));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+// LOGIN
+function openLogin() {
+  document.getElementById('pwInput').value = '';
+  document.getElementById('loginErr').textContent = '';
+  document.getElementById('loginModal').classList.add('open');
+  setTimeout(() => document.getElementById('pwInput').focus(), 250);
+}
+
+function doLogin() {
+  if (document.getElementById('pwInput').value === getPW()) {
+    closeModal('loginModal');
+    openAdmin();
+  } else {
+    document.getElementById('loginErr').textContent = '密碼錯誤，請再試一次';
+  }
+}
+
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ADMIN
+let aData = null;
+
+function openAdmin() {
+  aData = load();
+  renderAdmin();
+  document.getElementById('adminModal').classList.add('open');
+}
+
+function renderAdmin() {
+  const body = document.getElementById('adminBody');
+  body.innerHTML = '';
+
+  // Note
+  const nf = document.createElement('div');
+  nf.className = 'note-field';
+  nf.innerHTML = `<label>備註說明（顯示在時段下方）</label>
+    <textarea id="aNote" placeholder="如：如需預約請透過 LINE 與我們聯繫 💕">${aData.note||''}</textarea>`;
+
+body.appendChild(nf);
+
+// Days
+aData.days.forEach((day, i) => {
+const s = document.createElement(‘hr’); s.className = ‘sep’;
+body.appendChild(s);
+
+```
+const div = document.createElement('div');
+div.className = 'admin-day';
+div.innerHTML = `
+  <div class="admin-day-hd">
+    <div class="admin-day-name">週${DAYS[i]}</div>
+    <button class="toggle-closed${day.closed?' is-closed':''}" onclick="toggleClosed(${i})">
+      ${day.closed ? '✓ 公休中' : '設為公休'}
+    </button>
+  </div>
+  <div class="slots-area" id="chips-${i}"></div>
+  <div class="add-row" style="${day.closed?'opacity:.3;pointer-events:none':''}">
+    <input type="text" id="si-${i}" placeholder="輸入時段，如 10:00" maxlength="10"
+      onkeydown="if(event.key==='Enter'){addSlot(${i});event.preventDefault();}">
+    <button class="btn-add" onclick="addSlot(${i})">+ 新增</button>
+  </div>
+`;
+body.appendChild(div);
+renderChips(i);
+```
+
+});
+
+// PW change
+const pwDiv = document.createElement(‘div’);
+pwDiv.className = ‘pw-section’;
+pwDiv.innerHTML = `<hr class="sep"> <button class="pw-toggle-btn" onclick="document.getElementById('pwForm').classList.toggle('open')">🔒 修改管理密碼</button> <div class="pw-form" id="pwForm"> <div class="field" style="margin-top:12px"> <label>新密碼</label> <input type="password" id="np1" placeholder="輸入新密碼（至少4碼）"> </div> <div class="field"> <label>確認新密碼</label> <input type="password" id="np2" placeholder="再次輸入"> </div> <button class="btn-primary" onclick="changePW()" style="margin-top:4px">確認修改</button> <div class="err-msg" id="pwErr"></div> </div>`;
+body.appendChild(pwDiv);
+}
+
+function renderChips(i) {
+const c = document.getElementById(‘chips-’+i);
+if (!c) return;
+const day = aData.days[i];
+c.innerHTML = ‘’;
+if (!day.slots.length) {
+c.innerHTML = ‘<span style="font-size:12px;color:var(--taupe);">尚無時段</span>’;
+return;
+}
+day.slots.forEach((s,j) => {
+const chip = document.createElement(‘div’);
+chip.className = ‘slot-chip’ + (s.full ? ’ full-chip’ : ‘’);
+chip.innerHTML = `<span>${s.time}</span> <button class="chip-full-btn" onclick="toggleFull(${i},${j})">${s.full?'取消額滿':'額滿'}</button> <button class="chip-del" onclick="removeSlot(${i},${j})">✕</button>`;
+c.appendChild(chip);
+});
+}
+
+function toggleClosed(i) { aData.days[i].closed=!aData.days[i].closed; renderAdmin(); }
+function addSlot(i) {
+const inp = document.getElementById(‘si-’+i);
+const v = inp.value.trim();
+if (!v) return;
+aData.days[i].slots.push({time:v,full:false});
+inp.value=’’;
+renderChips(i);
+}
+function removeSlot(i,j) { aData.days[i].slots.splice(j,1); renderChips(i); }
+function toggleFull(i,j) { aData.days[i].slots[j].full=!aData.days[i].slots[j].full; renderChips(i); }
+
+function changePW() {
+const p1=document.getElementById(‘np1’).value;
+const p2=document.getElementById(‘np2’).value;
+const err=document.getElementById(‘pwErr’);
+if(!p1){err.textContent=‘請輸入新密碼’;return;}
+if(p1!==p2){err.textContent=‘兩次密碼不一致’;return;}
+if(p1.length<4){err.textContent=‘密碼至少 4 個字元’;return;}
+localStorage.setItem(PWKEY,p1);
+err.style.color=‘var(–green)’; err.textContent=‘✓ 密碼已更新’;
+setTimeout(()=>{err.textContent=’’;err.style.color=’#c0392b’;},2000);
+}
+
+function saveSchedule() {
+const noteEl=document.getElementById(‘aNote’);
+if(noteEl) aData.note=noteEl.value.trim();
+save(aData);
+renderPublic();
+const m=document.getElementById(‘saveMsg’);
+m.textContent=‘✓ 已儲存並發布！’;
+setTimeout(()=>m.textContent=’’,2500);
+}
+
+// INIT
+renderPublic();
+</script>
+
+</body>
+</html>
